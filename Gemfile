@@ -20,6 +20,7 @@ group :development, :test do
   gem "database_cleaner"
   gem "pry-byebug"
   gem "rspec-rails"
+  gem "phantomjs", :require => 'phantomjs/poltergeist'
 end
 
 group :test do
