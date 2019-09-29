@@ -10,10 +10,10 @@ products = ["tv", "vcr", "macbook", "macbook air", "mouse", "chair", "desk", "la
 10.times do
   products = ["tv", "vcr", "macbook", "macbook air", "mouse", "chair", "desk", "lamp", "water bottle"]
   Product.create(
-    :name => products.sample, 
-    :price => Faker::Number.between(from: 1,to: 1500), 
-    :description => Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    :inventory => Faker::Number.between(from: 1, to: 20)
+    :name => products.sample,
+    :price => Faker::Number.between(from = 1,to = 1500),
+    :description => Faker::Lorem.sentence(word_count= 3, supplemental= true, random_words_to_add= 4),
+    :inventory => Faker::Number.between(from = 1, to = 20)
   )
 
 end
@@ -28,4 +28,3 @@ end
   order = Order.create(:customer_id => Customer.all.collect(&:id).sample, :invoice_id => Invoice.all.collect(&:id).sample)
   order.products << Product.find(Product.all.collect(&:id).sample)
 end
-

@@ -1,1 +1,21 @@
+<script type="text/javascript">
+  if (<%=!!@create_error%>){
+    alert("<%=@create_error%>")
+  }
+</script>
 
+<h2>New Product Entry</h2>
+
+<%= form_for :product, url: "/products", method: :post do |p| %>
+
+  <%= p.label :name %><br>
+  <%= p.text_field :name %><br>
+  <%= p.label :description %><br>
+  <%= p.text_area :description %><br>
+  <%= p.label :inventory %><br>
+  <%= p.number_field :inventory %><br>
+  <%= p.label :price %><br>
+  <%= p.number_field :price %><br>
+  <%= p.submit %><br>
+
+<% end %>
